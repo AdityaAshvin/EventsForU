@@ -74,14 +74,16 @@
 
 <h1 class="text-center mb-3"> View Upcoming Events </h1>
   
-  <div class="card-group">
+  <div class="row">
   {% for event in events %}
+  <div class="col-sm-6 mb-3">
   <div class="card">
-    <img src="{{MEDIA_URL}}{{event.img.url}}" class="card-img-top" alt="...">
+    <img src="https://source.unsplash.com/1600x900/?{{event.title}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{event.title}}</h5>
-      <p class="card-text">{{event.header}}</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h3 class="card-title">{{event.title}}</h3>
+      <h5 class="card-text">{{event.header}}</h5>
+      <p class="card-text">{{event.desc}}</p>
+    </div>
     </div>
   </div>
   {% endfor %}

@@ -11,9 +11,12 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-class Events(models.Model):
+class Event(models.Model):
     title= models.CharField(max_length=122)
     header= models.CharField(max_length=122)
-    img = models.ImageField(upload_to = 'img')
+    desc= models.TextField()
+
+    def __str__(self):
+        return self.title
     
 
