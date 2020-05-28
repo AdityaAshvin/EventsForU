@@ -22,26 +22,21 @@
 
 {% endblock nav2 %}
 
-{% block nav3link %}  
+{% block nav3link %} 
 
   {% if user.is_authenticated %}
-    /logout
-  {% else %}
-    /signup
+    /logout 
   {% endif %}
 
 {% endblock nav3link %}
 
-{% block nav3 %}  
+{% block nav3 %} 
 
   {% if user.is_authenticated %}
     LogOut
-  {% else %}
-    SignUp
   {% endif %}
 
 {% endblock nav3 %}
-
 
 {% block body %} 
 
@@ -76,7 +71,7 @@
   
   <div class="row">
   {% for event in events %}
-  <div class="col-sm-6 mb-3">
+  <div class="col-sm-6 mb-3 d-flex">
   <div class="card">
     <img src="https://source.unsplash.com/1600x900/?{{event.title}}" class="card-img-top" alt="...">
     <div class="card-body">

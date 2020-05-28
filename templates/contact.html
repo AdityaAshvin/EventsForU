@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} ContactUs {% endblock title %}
+{% block title %} Participate {% endblock title %}
 
 {% block nav2link %} 
 
@@ -22,22 +22,18 @@
 
 {% endblock nav2 %}
 
-{% block nav3link %}  
+{% block nav3link %} 
 
   {% if user.is_authenticated %}
-    /logout
-  {% else %}
-    /signup
+    /logout 
   {% endif %}
 
 {% endblock nav3link %}
 
-{% block nav3 %}  
+{% block nav3 %} 
 
   {% if user.is_authenticated %}
     LogOut
-  {% else %}
-    SignUp
   {% endif %}
 
 {% endblock nav3 %}

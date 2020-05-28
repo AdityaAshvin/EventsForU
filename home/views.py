@@ -32,7 +32,6 @@ def signup(request):
     if request.method == 'POST':                                              #fetching the data from form
         username = request.POST["username"]
         firstname = request.POST["firstname"]
-        lastname = request.POST["lastname"]
         email = request.POST["email"]
         password = request.POST["password"]
 
@@ -40,7 +39,7 @@ def signup(request):
             messages.info(request,'Email already in use')
             return redirect('register')
         else:
-            user = User.objects.create_user(username=username, password=password, email=email, first_name=firstname, last_name= lastname)
+            user = User.objects.create_user(username=username, password=password, email=email, first_name=firstname)
             user.save()
             messages.info(request,'Successfully Registered')
             return redirect('home')

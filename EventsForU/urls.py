@@ -17,6 +17,7 @@ from django.contrib import admin
 from . import settings
 from django.urls import path,include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from django.contrib.auth import views as auth_views
 
 admin.site.site_header = "EventsForU Admin"
 admin.site.site_title = "EventsForU Admin Portal"
@@ -24,8 +25,15 @@ admin.site.index_title = "Welcome to EventsForU Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('home/', include('home.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('^', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
