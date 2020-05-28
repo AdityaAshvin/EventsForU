@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} SignUp {% endblock title %}
+
+{% block body %} 
+<h1 class="text-center my-2"> Register Here </h1>
+<div class = "container-fluid">
+    <form action="signup" method="POST">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="name"><h3>First Name</h3></label>
+        <input type="firstname" class="form-control" id="firstname" name="firstname" placeholder = "Enter your First Name "aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="name"><h3>Last Name</h3></label>
+        <input type="lastname" class="form-control" id="lastname" name="lastname" placeholder = "Enter your Last Name "aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="name"><h3>UserName</h3></label>
+        <input type="username" class="form-control" id="username" name="username" placeholder = "Enter your UserName "aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1"><h3>Email address</h3></label>
+        <input type="email" class="form-control" id="email" name="email" placeholder = "Enter your Email id "aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1"><h3>Password<h3></label>
+        <input type="password" class="form-control" id="password" name="password" placeholder = "enter your password">
+    </div>
+    <small id="emailHelp" class="form-text text-muted mb-4"><strong>We'll never share your details with anyone else.</strong></small>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
+
+
