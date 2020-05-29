@@ -3,12 +3,12 @@ from home.models import Contact
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate
-from home.models import Event
+from home.models import EventPage
 
 # Create your views here.
 
 def index(request):
-    events = Event.objects.all()
+    events = EventPage.objects.all()
     return render(request, 'index.html',{'events': events})
 
 def login(request):
