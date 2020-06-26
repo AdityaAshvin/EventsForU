@@ -1,4 +1,4 @@
-# EventsForU
+![logo](static/img/logo1.png)
 ### An Event Registration Website made using the Django Framework
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
@@ -40,7 +40,6 @@
 ![Participantpage2](screenshots/ParticipantPage2.JPG)
 ### ParticipantPage when the User is not logged in
 ![Participantpage2](screenshots/ParticipantPage3.JPG)
-![Django](https://img.shields.io/badge/Made%20with-Django-brightgreen?style=for-the-badge&logo=django)
 ### v0.1
 ### HomePage when the User is logged in
 ![homepage4](screenshots/HomePage4.JPG)
@@ -49,6 +48,7 @@
 ![login](screenshots/signin.JPG)
 ### SignUp Page
 ![signup](screenshots/signup.JPG)
+![Django](https://img.shields.io/badge/Made%20with-Django-brightgreen?style=for-the-badge&logo=django)
 ### This UI of the website is built with the help of
 > [Bootstrap](https://getbootstrap.com/)
 >
