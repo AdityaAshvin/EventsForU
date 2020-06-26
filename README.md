@@ -18,7 +18,7 @@
 >
 > 3. Font size of text in navbar and footer increased for better viewing
 >
-**WHat's new in v0.3**
+**What's new in v0.3**
 >1. Added reCAPTCHA in the participant form.
 >
 >2. Sending an email as soon as the form is filled.
