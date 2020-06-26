@@ -5,7 +5,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
 # Features of the website
 **v0.0**
-> 1. The admin can dynamically add the events. The date, time, image(based on the title given) and the unique id will be generated on its own. the admin has to give a title, header and a basic description.
+> 1. The admin can dynamically add the events. The date, time, image(based on the title given) and the unique id will be generated on its own. the admin has to give a title, header, basic description, location, organizer details and tags related to the event.
 >
 > 2. The participant can view the upcoming events and then fill the form in the Particpants page to register for a particular event
 >
@@ -17,6 +17,18 @@
 > 2. A new logo added in the Navbar
 >
 > 3. Font size of text in navbar and footer increased for better viewing
+>
+**WHat's new in v0.3**
+>1. Added reCAPTCHA in the participant form.
+>
+>2. Sending an email as soon as the form is filled.
+>
+>3. Improvements in the UI of the HomePage.
+>
+>4. Search bar added in the HomePage.
+>
+>5. Tags, Location, Organizer details added for each event.
+>
 # Installation
 ### 1. Install python
 > https://realpython.com/installing-python/
@@ -48,6 +60,15 @@
 ![login](screenshots/signin.JPG)
 ### SignUp Page
 ![signup](screenshots/signup.JPG)
+### v0.3
+### Tags, Location added
+![tags](screenshots/0.3_1.JPG)
+### Search Bar
+![search](screenshots/0.3_2.JPG)
+### reCAPTCHA
+![recaptcha](screenshots/0.3_3.JPG)
+### Registration Completed email
+![email](screenshots/0.3_4.JPG)
 ![Django](https://img.shields.io/badge/Made%20with-Django-brightgreen?style=for-the-badge&logo=django)
 ### This UI of the website is built with the help of
 > [Bootstrap](https://getbootstrap.com/)
