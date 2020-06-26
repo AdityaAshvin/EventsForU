@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
+
 {% block title %} Home {% endblock title %}
 
 {% block nav2link %} 
@@ -25,7 +28,9 @@
 {% block nav3link %} 
 
   {% if user.is_authenticated %}
-    /logout 
+    /contact
+  {% else %}
+    /contact
   {% endif %}
 
 {% endblock nav3link %}
@@ -33,10 +38,28 @@
 {% block nav3 %} 
 
   {% if user.is_authenticated %}
-    LogOut
+    Participate
+  {% else %}
+    Participate
   {% endif %}
 
 {% endblock nav3 %}
+
+{% block nav4link %} 
+
+  {% if user.is_authenticated %}
+    /logout 
+  {% endif %}
+
+{% endblock nav4link %}
+
+{% block nav4 %} 
+
+  {% if user.is_authenticated %}
+    LogOut
+  {% endif %}
+
+{% endblock nav4 %}
 
 {% block body %} 
 
@@ -67,6 +90,11 @@
 
 <div class="container my-3">
 
+<form class="form-inline my-5 my-lg-0" style="position: relative;left:280px; height: 100px;">
+      <input class="form-control mr-sm-2" style="height: 50px; width: 500px;" type="search" placeholder="Search event categories" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" style="height: 50px;" type="submit">Search</button>
+</form>
+
 <h1 class="text-center mb-3"> View Upcoming Events </h1>
   
   <div class="row">
@@ -75,9 +103,11 @@
   <div class="card">
     <img src="https://source.unsplash.com/1600x900/?{{event.title}}" class="card-img-top" alt="...">
     <div class="card-body">
+      <h4 class="card-text" style="text-align:center; color:orange;">{{event.tag}}</h4>
       <h3 class="card-title">{{event.title}}</h3>
       <h5 class="card-text">{{event.header}}</h5>
       <p class="card-text">{{event.desc}}</p>
+      <h5 class="card-text">Location :{{event.location}}</h5>
       <h6 class="card-text">Created on :{{event.created_at}}</h6>
       <p class="card-text"><strong>Unique id:- {{event.id}}</strong></p>
     </div>

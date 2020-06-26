@@ -25,7 +25,9 @@
 {% block nav3link %} 
 
   {% if user.is_authenticated %}
-    /logout 
+    /home
+  {% else %}
+    /home
   {% endif %}
 
 {% endblock nav3link %}
@@ -33,10 +35,28 @@
 {% block nav3 %} 
 
   {% if user.is_authenticated %}
-    LogOut
+    Home
+  {% else %}
+    Home
   {% endif %}
 
 {% endblock nav3 %}
+
+{% block nav4link %} 
+
+  {% if user.is_authenticated %}
+    /logout 
+  {% endif %}
+
+{% endblock nav4link %}
+
+{% block nav4 %} 
+
+  {% if user.is_authenticated %}
+    LogOut
+  {% endif %}
+
+{% endblock nav4 %}
 
 {% block body %} 
 
@@ -51,20 +71,22 @@
   {% csrf_token %}
   <div class="form-group">
     <label for="name"><h3>Name</h3></label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
+    <input type="text" class="form-control" style="width:300px;" id="name" name="name" placeholder="Enter your full name">
   </div>
   <div class="form-group">
     <label for="email"><h3>Email address</h3></label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email id">
+    <input type="email" class="form-control" style="width:300px;" id="email" name="email" placeholder="Enter your email id">
   </div>
   <div class="form-group">
     <label for="phone"><h3>Phone Number</h3></label>
-    <input type="phone" class="form-control" id="phone"  name="phone" placeholder="Enter your Phone number">
+    <input type="phone" class="form-control" id="phone" style="width:300px;"  name="phone" placeholder="Enter your Phone number">
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1"><h3> Enter the Unique Id of the event you are interested in</h3></label>
-    <textarea class="form-control" id="textbox" name="textbox" rows="3"></textarea>
+    <textarea class="form-control" id="textbox" style="width:500px;"  name="textbox" rows="3"></textarea>
   </div>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <div class="g-recaptcha" data-sitekey="6LeHq6kZAAAAALWyvLVXhLy5BFdz_k-Tc9b8Ri83"></div>
   <button class="btn btn-primary my-3 mb-5">Submit</button>
   </form>
 

@@ -18,6 +18,9 @@ class EventPage(models.Model):
     header= models.CharField(max_length=122)
     desc= models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    location= models.TextField(default='')
+    tag= models.CharField(max_length=122, default='')
+    organizer= models.CharField(max_length=122, default='')
 
     def __str__(self):
         return self.title
