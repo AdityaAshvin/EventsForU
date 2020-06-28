@@ -31,7 +31,7 @@ def login(request):
             return redirect('home')
         else:
             messages.info(request,"invalid credentials")
-            return redirect('login')
+            return redirect('home')
     else:
         return render(request,'login.html')
 
@@ -44,11 +44,14 @@ def signup(request):
 
         if User.objects.filter(email=email).exists():
             messages.info(request,'Email already in use')
-            return redirect('register')
+            return redirect('home')
+        elif User.objects.filter(username=username).exists():
+            messages.info(request,'Username already in use')
+            return redirect('home')
         else:
             user = User.objects.create_user(username=username, password=password, email=email, first_name=firstname)
             user.save()
-            messages.info(request,'Successfully Registered')
+            messages.info(request,'Successfully Registered. You can now login to your account.')
             return redirect('home')
     else:    
         return render(request, "register.html")
@@ -61,7 +64,7 @@ def contact(request):
         desc = request.POST.get('textbox')
         recaptcha_response = request.POST.get('g-recaptcha-response')
         data = {
-                'secret': 'settings.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY',
+                'secret': '6LeHq6kZAAAAADYjaLlN81u-DeQ7cP_zMMH9cC_3',
                 'response': recaptcha_response
             }
         r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
@@ -77,7 +80,8 @@ def contact(request):
                     "phone": phone,
                     "event": event.title,
                     "location": event.location,
-                    "desc": event.desc
+                    "desc": event.desc,
+                    "organizer": event.organizer
                 }
                 message = render_to_string('email/registration_complete_email.html', context)
                 send_mail('Registration Completed | EventsForU',  strip_tags(message) , from_email, [email], fail_silently=False, html_message=message)
