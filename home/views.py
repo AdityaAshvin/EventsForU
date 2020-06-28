@@ -64,7 +64,7 @@ def contact(request):
         desc = request.POST.get('textbox')
         recaptcha_response = request.POST.get('g-recaptcha-response')
         data = {
-                'secret': '6LeHq6kZAAAAADYjaLlN81u-DeQ7cP_zMMH9cC_3',
+                'secret': 'settings.GOOGLE_RECAPTCHA_SITE_KEY',
                 'response': recaptcha_response
             }
         r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
