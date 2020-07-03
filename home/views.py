@@ -54,7 +54,7 @@ def signup(request):
             messages.info(request,'Successfully Registered. You can now login to your account.')
             return redirect('home')
     else:    
-        return render(request, "register.html")
+        return render(request, "login.html")
 
 def contact(request):
     if request.method == "POST":

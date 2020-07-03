@@ -8,9 +8,9 @@
 {% block nav2link %} 
 
   {% if user.is_authenticated %}
-    /  
+    
   {% else %}
-    /login
+    /signup
   {% endif %}
 
 {% endblock nav2link %}
@@ -109,11 +109,35 @@
       <p class="card-text">{{event.desc}}</p>
       <h5 class="card-text">Location :{{event.location}}</h5>
       <h6 class="card-text">Created on :{{event.created_at}}</h6>
-      <p class="card-text"><strong>Unique id:- {{event.id}}</strong></p>
+      <br>
+      <p><strong>Unique id:-</strong> <p class="card-text" id="id"><strong>{{event.id}}</strong></p> </p>
+      <button class="btn btn-outline-success" id="btn">Copy Unique id</button>
     </div>
     </div>
   </div>
   {% endfor %}
 </div>
+<script>
+  var btn = document.querySelector('#btn');  
+  btn.addEventListener('click', function(event) {  
+  // Select the email link anchor text  
+  var id = document.querySelector('#id');  
+  var range = document.createRange();  
+  range.selectNode(id);  
+  window.getSelection().addRange(range);  
 
+  try {  
+    // Now that we've selected the anchor text, execute the copy command  
+    var successful = document.execCommand('copy');  
+    var msg = successful ? 'successful' : 'unsuccessful';  
+    console.log('Copy Uid command was ' + msg);  
+  } catch(err) {  
+    console.log('Oops, unable to copy');  
+  }  
+
+  // Remove the selections - NOTE: Should use
+  // removeRange(range) when it is supported  
+  window.getSelection().removeAllRanges();  
+});
+</script>
 {% endblock body %}

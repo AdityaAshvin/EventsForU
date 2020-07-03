@@ -26,7 +26,6 @@ admin.site.index_title = "Welcome to EventsForU Researcher Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('home/', include('home.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('^', include('django.contrib.auth.urls')),
 ]
