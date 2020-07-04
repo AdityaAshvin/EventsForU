@@ -29,6 +29,12 @@
 >
 >5. Tags, Location, Organizer details added for each event.
 >
+**Future plans**
+> Integrate payment option using Stripe or PayTM
+>
+> Add ML
+>
+> Better profile page for the users
 # Installation
 ### 1. Install python
 > https://realpython.com/installing-python/
