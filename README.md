@@ -4,8 +4,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
-### Will be deployed on Heroku server
-![Heroku](https://heroku-badge.herokuapp.com/?app=eventzforu)
 # Features of the website
 **v0.0**
 > 1. The admin can dynamically add the events. The date, time, image(based on the title given) and the unique id will be generated on its own. the admin has to give a title, header, basic description, location, organizer details and tags related to the event.
