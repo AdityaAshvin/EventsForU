@@ -26,7 +26,7 @@ SECRET_KEY = '2e(l^e_xv_zo-52k(7o019pxvf%+n81&$s(vaxrrmo^a^i13*x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eventzforu.herokuapp.com', 'localhost']
 
 
 # Application definition
