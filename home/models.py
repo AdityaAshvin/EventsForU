@@ -21,7 +21,10 @@ class EventPage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     location= models.TextField(default='')
     tag= models.CharField(max_length=122, default='')
-    eventdate = models.DateField(default=date.today())
+    eventdate = models.IntegerField(default=1)
+    eventday = models.TextField(default="")
+    eventmonth = models.TextField(default="")
+    eventyear = models.IntegerField(default=2020)
     organizer= models.CharField(max_length=122, default='')
 
     def __str__(self):

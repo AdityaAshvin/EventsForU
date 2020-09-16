@@ -93,6 +93,10 @@ def contact(request):
     else:    
         return render(request, "contact.html")
 
+def eventpage(request,id):
+        events = EventPage.objects.filter(id=id).first()
+        return render(request, 'eventpage.html',{'events': events})
+
 def logout(request):
     auth.logout(request)
     return redirect('/')
