@@ -1,1 +1,1 @@
-web: gunicorn Eventsforu.wsgi --log-file -
+web: gunicorn EventsForU.wsgi --log-file -
