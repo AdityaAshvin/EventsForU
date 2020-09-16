@@ -25,9 +25,9 @@
 {% block nav3link %} 
 
   {% if user.is_authenticated %}
-    /home
+    /
   {% else %}
-    /home
+    /
   {% endif %}
 
 {% endblock nav3link %}
@@ -65,35 +65,48 @@
 </div>
 
 {% if user.is_authenticated %}
-  <div class = container>
-  <h1 class="text-center my-2 mb-3"> To participate in any of the event <br> you must fill this form </h1>
-  <form method="post" action="/contact">
+  <div class = "container-fluid pb-5 text-center" style="background-image:url('../static/img/bg.jpg');background-size:cover;">
+  <h1 class="text-center pt-5" style="font-family:algerian;color:red;font-weight:bold;"> Ready to Participate? </h1>
+  <h1 class="text-center pb-5" style="font-family:oswald;color:red;font-weight:bold;"> Make sure you have copied the UniqueId.<br> If not, copy it before filling the form. </h1>
+  <button class="btn btn-warning my-3 mb-5" style="border-radius:32px;width:250px;height:50px;">Back to Events Page</button>
+  <form method="post" action="/contact" style="border:0px solid darkblue !important;margin-left: auto;margin-right:auto;background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+  border: 1px solid black;
+  width:700px;">
   {% csrf_token %}
   <div class="form-group">
-    <label for="name"><h3>Name</h3></label>
-    <input type="text" class="form-control" style="width:300px;" id="name" name="name" placeholder="Enter your full name">
+    <label for="name"><h3 style="font-family:roboto;padding-top:20px;color:white;">Name</h3></label>
+    <input type="text" class="form-control" style="color:white;width:300px;margin-left:auto;margin-right:auto;border: none;
+  border-bottom: 2px solid red;background-color: rgba(0,0,0, 0);" id="name" name="name">
   </div>
   <div class="form-group">
-    <label for="email"><h3>Email address</h3></label>
-    <input type="email" class="form-control" style="width:300px;" id="email" name="email" placeholder="Enter your email id">
+    <label for="email"><h3 style="font-family:roboto;color:white;">Email address</h3></label>
+    <input type="email" class="form-control" style="color:white;width:300px;margin-left:auto;margin-right:auto;border: none;
+  border-bottom: 2px solid red;background-color: rgba(0,0,0, 0);" id="email" name="email">
   </div>
   <div class="form-group">
-    <label for="phone"><h3>Phone Number</h3></label>
-    <input type="phone" class="form-control" id="phone" style="width:300px;"  name="phone" placeholder="Enter your Phone number">
+    <label for="phone"><h3 style="font-family:roboto;color:white;">Phone Number</h3></label>
+    <input type="phone" class="form-control" id="phone" style="color:white;width:300px;margin-left:auto;margin-right:auto;border: none;
+  border-bottom: 2px solid red;background-color: rgba(0,0,0, 0);"  name="phone">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1"><h3> Enter the Unique Id of the event you are interested in</h3></label>
-    <textarea class="form-control" id="textbox" style="width:500px;"  name="textbox" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1"><h3 style="font-family:roboto;color:white;padding-top:20px;"> Enter the Unique Id of the event you are interested in</h3></label>
+    <textarea class="form-control" id="textbox" style="color:white;width:500px;height:50px;margin-left:auto;margin-right:auto;border: none;
+  border-bottom: 2px solid red;background-color: rgba(0,0,0, 0);"  name="textbox" rows="3"></textarea>
   </div>
+  <div class="text-center">
   <script src='https://www.google.com/recaptcha/api.js'></script>
-  <div class="g-recaptcha" data-sitekey="6LeHq6kZAAAAALWyvLVXhLy5BFdz_k-Tc9b8Ri83"></div>
-  <button class="btn btn-primary my-3 mb-5">Submit</button>
+  <div class="g-recaptcha" style="display:inline-block;" data-sitekey="6LeHq6kZAAAAALWyvLVXhLy5BFdz_k-Tc9b8Ri83"></div>
+  </div>
+  <button class="btn btn-danger my-3 mb-5" style="border-radius:32px;width:150px;height:50px;">Submit</button>
   </form>
+  </div>
 
 {% else %}
 
-  <h1 class="text-center"> To Participate in any event you must Login or Register</h1>
+  <h1 class="text-center pt-5" style="font-family:algerian;color:darkblue;font-weight:bold;"> Ready to Participate? </h1>
+  <h1 class="text-center pt-3 pb-3" style="font-family:oswald;color:darkblue;font-weight:bold;"> Login to your account or Sign Up for free to start participating </h1>
+  <h1 class="text-center pb-5" style="font-family:oswald;color:darkblue;font-weight:bold;"> Make sure you have copied the UniqueId.<br> If not, copy it before filling the form. </h1>
 
 {% endif %}
-
 {% endblock body %}

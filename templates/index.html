@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
 
 {% block title %} Home {% endblock title %}
+
+{% block nav1link %}
+  #events
+{% endblock nav1link %}
+
+{% block nav1 %}
+  View Events
+{% endblock nav1 %}
 
 {% block nav2link %} 
 
@@ -62,19 +69,75 @@
 {% endblock nav4 %}
 
 {% block body %} 
-
-
+<div style = "background-color: #00DBDE;
+background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)";
+>
 <div class = "container-fluid px-0">
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="/static/img/slider1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Register now to attend the biggest events taking place around the world.</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="/static/img/slider2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend traditional events</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="/static/img/slider3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend music fests</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/img/slider4.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend sporting events</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/img/slider5.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend carnivals</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/img/slider6.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend music shows</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/img/slider7.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend festivals</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/img/slider8.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>EventzForU</h1>
+        <h3>Participate/Attend concerts</h3>
+        <h5>Scroll down to view upcoming events</h5>
+      </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -88,56 +151,34 @@
 </div>
 </div>
 
-<div class="container my-3">
+<div class="container my-3" id="events">
 
 <form class="form-inline my-5 my-lg-0" style="position: relative;left:280px; height: 100px;">
-      <input class="form-control mr-sm-2" style="height: 50px; width: 500px;" type="search" placeholder="Search event categories" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" style="height: 50px;" type="submit">Search</button>
+      <input class="form-control mr-sm-2" style="height: 50px; color: red;width: 500px;border-radius:32px;" type="search" placeholder="Search event categories. Eg: Music, Sports, Dance, Festivals..." aria-label="Search">
+      <button class="btn btn-danger my-2 my-sm-0" style="height: 50px;border-radius:32px;width:100px;" type="submit">Search</button>
 </form>
 
-<h1 class="text-center mb-3"> View Upcoming Events </h1>
+<h1 class="text-center mb-3" style="color: darkblue; font-family:algerian;"> View Upcoming Events </h1>
   
   <div class="row">
   {% for event in events %}
   <div class="col-sm-6 mb-3 d-flex">
-  <div class="card">
-    <img src="https://source.unsplash.com/1600x900/?{{event.title}}" class="card-img-top" alt="...">
+  <div class="card" style="box-shadow: 3px 3px 3px 3px grey; transition: 0.3s; background-color:beige;">
+    <img src="https://source.unsplash.com/1600x900/?{{event.title}},{{event.tag}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h4 class="card-text" style="text-align:center; color:orange;">{{event.tag}}</h4>
-      <h3 class="card-title">{{event.title}}</h3>
-      <h5 class="card-text">{{event.header}}</h5>
-      <p class="card-text">{{event.desc}}</p>
-      <h5 class="card-text">Location :{{event.location}}</h5>
-      <h6 class="card-text">Created on :{{event.created_at}}</h6>
+      <h4 class="card-text" style="text-align:center; color:orange;font-family: algerian;">{{event.tag}}</h4>
+      <h3 class="card-title" style="color:darkblue;font-family:pt seriff;" >{{event.title}}</h3>
+      <h5 class="card-text" style="color:darkblue;font-family:roboto;">{{event.header}}</h5>
+      <p class="card-text" style="color:red;font-family:sans seriff;">{{event.desc}}</p>
+      <h5 class="card-text" style="color:darkblue;font-family:pt seriff;">Location :{{event.location}}</h5>
+      <h5 class="card-text" style="color:darkblue;font-family:pt seriff;">Scheduled on :{{event.eventdate}}</h5>
       <br>
-      <p><strong>Unique id:-</strong> <p class="card-text" id="id"><strong>{{event.id}}</strong></p> </p>
-      <button class="btn btn-outline-success" id="btn">Copy Unique id</button>
+      <p ><strong style="color:darkblue;font-family:pt seriff;">Unique id:-</strong><textarea id="copyContent" class="form-control" rows="1" style="background-color:black; color:white;">{{event.id}}</textarea></p>
+      <a class"card-text" href="/contact"><button class="btn btn-warning" style="height: 50px;border-radius:32px;width:100px;align-items:center;" type="submit">Participate</button><a>
     </div>
     </div>
   </div>
   {% endfor %}
 </div>
-<script>
-  var btn = document.querySelector('#btn');  
-  btn.addEventListener('click', function(event) {  
-  // Select the email link anchor text  
-  var id = document.querySelector('#id');  
-  var range = document.createRange();  
-  range.selectNode(id);  
-  window.getSelection().addRange(range);  
-
-  try {  
-    // Now that we've selected the anchor text, execute the copy command  
-    var successful = document.execCommand('copy');  
-    var msg = successful ? 'successful' : 'unsuccessful';  
-    console.log('Copy Uid command was ' + msg);  
-  } catch(err) {  
-    console.log('Oops, unable to copy');  
-  }  
-
-  // Remove the selections - NOTE: Should use
-  // removeRange(range) when it is supported  
-  window.getSelection().removeAllRanges();  
-});
-</script>
+</div>
 {% endblock body %}

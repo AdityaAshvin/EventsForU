@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,23 +19,35 @@
   </head>
 
   <body>
+<<<<<<< HEAD
+    <nav class="navbar navbar-expand-lg navbar-light py-0" style="background-color: #1d2b36; !important>
+=======
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+>>>>>>> b25f37bbacf3407889d5df7b584767814e62a5ee
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
+<<<<<<< HEAD
+    <img src="/static/img/logo-new.png" alt="" style="width: 400px;
+    height: 70px;
+=======
     <img src="/static/img/logo1.png" alt="" style="width: 270px;
     height: 170px;
+>>>>>>> b25f37bbacf3407889d5df7b584767814e62a5ee
     background-size: cover;">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item px-3">
-        <a class="nav-link" href="{% block nav2link %} {% endblock nav2link %}" style="color: white;"><h2>{% block nav2 %} {% endblock nav2 %}</h2> </a>
+    <li class="nav-item px-3">
+        <a class="nav-link" href="{% block nav1link %} {% endblock nav1link %}" style="color: white;font-family:pt seriff;"><h2>{% block nav1 %} {% endblock nav1 %}</h2> </a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="{% block nav3link %} {% endblock nav3link %}" style="color: white;"><h2>{% block nav3 %} {% endblock nav3 %} </h2></a>
+        <a class="nav-link" href="{% block nav2link %} {% endblock nav2link %}" style="color: white;font-family:pt seriff;"><h2>{% block nav2 %} {% endblock nav2 %}</h2> </a>
       </li>
       <li class="nav-item px-3">
-        <a class="nav-link" href="{% block nav4link %} {% endblock nav4link %}" style="color: white;"><h2> {% block nav4 %} {% endblock nav4 %} </h2></a>
+        <a class="nav-link" href="{% block nav3link %} {% endblock nav3link %}" style="color: white;font-family:pt seriff;"><h2>{% block nav3 %} {% endblock nav3 %} </h2></a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="{% block nav4link %} {% endblock nav4link %}" style="color: white;font-family:pt seriff;"><h2> {% block nav4 %} {% endblock nav4 %} </h2></a>
       </li>
     </ul>
   </div>
@@ -55,10 +66,13 @@
 
 {% block body%} {% endblock body %}
 
-<img src="/static/img/title_logo.png" style="position:absolute;right: 0px;">
-<footer class="footer py-2 text-center bg-dark">
-  <div class="container py-3">
-    <span class="textmuted" style="color: white;"><h3>This website is created with <i class="fa fa-heart"></i> by Aditya Ashvin</h3></span>
+<footer class="footer py-2 text-center bg-dark" style="background-color: #1d2b36; !important>
+  <div class="container-fluid py-3">
+    <span class="textmuted" style="color: white; padding-top:20px;font-family:oswald"><h3>This website is created with <i class="fa fa-heart" style="color:red;"></i> by Aditya Ashvin</h3></span>
+    <span class="textmuted" style="color: white; padding-top:20px;font-family:oswald"><h3>Made in <img src="https://img.icons8.com/color/48/000000/india-circular.png"/></h3></span>
+    <span class="textmuted" style="color: white; padding-top:20px;font-family:cursive"><h6>Images Taken from <a href="https://unsplash.com/">Unsplash</a> and Icons taken from <a href="https://icons8.com/">Icons8</a></h6></span>
+    <span class="textmuted" style="color: white; padding-top:40px;font-family:pt seriff"><h4>&copy; Aditya Ashvin under <a href="https://github.com/AdityaAshvin/EventsForU/blob/master/LICENSE">Apache License 2.0</a></h4></span>
+    
   </div>
 </footer>
 

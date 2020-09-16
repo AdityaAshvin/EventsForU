@@ -13,6 +13,8 @@ body{
   align-items: center;
   background: -webkit-linear-gradient(left, #7579ff, #b224ef);
   font-family: 'Nunito', sans-serif;
+  background-image: url('../img/loginbg.jpg') !important;
+  background-size: cover;
 }
 
 input, button{
@@ -35,6 +37,7 @@ input, button{
   width: 640px;
   height: 100%;
   padding: 50px 30px;
+  background: transparent !important;
   -webkit-transition:-webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
@@ -167,19 +170,19 @@ button{
   top: 0;
   width: 900px;
   height: 100%;
-  background: darkblue;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  background: rgb(0,0,139);
 }
 
-.img:after{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: darkblue !important;
+.img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,139);
 }
 
 .cont.s-signup .img:before{
@@ -202,8 +205,8 @@ button{
 }
 
 .img-text h2{
-  margin-bottom: 100px;
-  font-weight: bolder;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 
 .img-text p{

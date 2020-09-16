@@ -24,14 +24,15 @@ def login(request):
         password = request.POST["password"]
 
         user = auth.authenticate(username=username,password=password)
-
-        if user is not None:
-            auth.login(request, user)
-            messages.info(request,"Successfully logged in!")
-            return redirect('home')
-        else:
-            messages.info(request,"invalid credentials")
-            return redirect('home')
+        
+        if username is not None and password is not None:
+            if user is not None:
+                auth.login(request, user)
+                messages.info(request,"Successfully logged in!")
+                return redirect('home')
+            else:
+                messages.info(request,"invalid credentials")
+                return redirect('home')
     else:
         return render(request,'login.html')
 
@@ -64,7 +65,7 @@ def contact(request):
         desc = request.POST.get('textbox')
         recaptcha_response = request.POST.get('g-recaptcha-response')
         data = {
-                'secret': 'settings.GOOGLE_RECAPTCHA_SITE_KEY',
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
         r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)

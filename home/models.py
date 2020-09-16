@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 import uuid
 
 # Create your models here
@@ -20,6 +21,7 @@ class EventPage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     location= models.TextField(default='')
     tag= models.CharField(max_length=122, default='')
+    eventdate = models.DateField(default=date.today())
     organizer= models.CharField(max_length=122, default='')
 
     def __str__(self):
