@@ -9,7 +9,7 @@
 {% endblock nav1link %}
 
 {% block nav1 %}
-  View Events
+  <img src="https://img.icons8.com/cute-clipart/38/000000/overtime.png"/> View Events
 {% endblock nav1 %}
 
 {% block nav2link %} 
@@ -25,9 +25,9 @@
 {% block nav2 %} 
 
   {% if user.is_authenticated %}
-    Hello, {{user.first_name}}
+    <img src="https://img.icons8.com/emoji/38/000000/waving-hand-emoji.png"/> Hello, {{user.first_name}}
   {% else %}
-    Login
+    <img src="https://img.icons8.com/emoji/38/000000/waving-hand-emoji.png"/> Login
   {% endif %}
 
 {% endblock nav2 %}
@@ -45,9 +45,9 @@
 {% block nav3 %} 
 
   {% if user.is_authenticated %}
-    Participate
+    <img src="https://img.icons8.com/cute-clipart/38/000000/form.png"/> Participate
   {% else %}
-    Participate
+    <img src="https://img.icons8.com/cute-clipart/38/000000/form.png"/> Participate
   {% endif %}
 
 {% endblock nav3 %}
@@ -63,7 +63,7 @@
 {% block nav4 %} 
 
   {% if user.is_authenticated %}
-    LogOut
+    <img src="https://img.icons8.com/cute-clipart/38/000000/logout-rounded-left.png"/> LogOut
   {% endif %}
 
 {% endblock nav4 %}
@@ -92,7 +92,7 @@
     </div>
     <div class="carousel-item">
       <img src="/static/img/slider3.jpg" style="opacity:0.5;"class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-md-block" style="color:black;">
         <h1>EventzForU</h1>
         <h3>Participate/Attend music fests</h3>
         <h5>Scroll down to view upcoming events</h5>
@@ -152,9 +152,9 @@
 
 <div class="container my-4 mb-4" id="events" style="background-color:beige;border-radius:64px;">
 
-<form class="form-inline my-5 my-lg-0" style="margin-right:auto; margin-left:auto; height: 100px;">
+<form class="form-inline my-5 my-lg-0" style="margin-right:auto; margin-left:auto; height: 100px;padding-top:20px;">
       <input class="form-control mr-sm-2" style="height: 50px; color: red;width: 500px;border-radius:32px;" type="search" placeholder="Search event categories. Eg: Music, Sports, Dance, Festivals..." aria-label="Search">
-      <button class="btn btn-danger my-2 my-sm-0" style="height: 50px;border-radius:32px;width:100px;" type="submit">Search</button>
+      <button class="btn btn-warning my-2 my-sm-0" style="height: 50px;border-radius:32px;width:100px;" type="submit">Search</button>
 </form>
 
 <h1 class="text-center mb-3" style="color: darkblue; font-family:algerian;"> View Upcoming Events </h1>
@@ -169,7 +169,7 @@
       <h2 class="card-title" id="eventtitle" style="color:darkblue;font-family:pt seriff;" >{{event.title}}</h2>
       <h4 class="card-text" id="eventheader" style="color:darkblue;font-family:roboto;">{{event.header}}</h4>
       <h3 class="card-text" id="eventschedule" style="color:red;font-family:pt seriff;padding-top:10px;">{{event.eventday}}, {{event.eventmonth}} {{event.eventdate}} {{event.eventyear}}</h3>
-      <h3 class="card-text" id="eventinfo" style="text-align:right; color:orange;font-family: sans seriff;padding-top:20px;"><a href="eventpage/{{event.id}}"><button class="btn btn-dark" style="height: 50px;width:120px;align-items:center;" type="submit">More Info</button></a></h3>
+      <h3 class="card-text" id="eventinfo" style="text-align:right; color:orange;font-family: sans seriff;padding-top:20px;padding-bottom:5px;"><a href="eventpage/{{event.id}}"><button class="btn btn-dark" style="height: 50px;width:120px;align-items:center;" type="submit">More Info</button></a></h3>
     </div>
     </div>
   </div>
