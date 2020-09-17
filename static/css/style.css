@@ -26,7 +26,7 @@ input, button{
 .cont{
   overflow: hidden;
   position: relative;
-  width: 900px;
+  width: 660px;
   height: 550px;
   background: #fff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -34,7 +34,7 @@ input, button{
 
 .form{
   position: relative;
-  width: 640px;
+  width: 400px;
   height: 100%;
   padding: 50px 30px;
   background: transparent !important;
@@ -136,7 +136,7 @@ button{
 .sub-cont{
   overflow: hidden;
   position: absolute;
-  left: 640px;
+  left: 400px;
   top: 0;
   width: 900px;
   height: 100%;
@@ -148,8 +148,8 @@ button{
 }
 
 .cont.s-signup .sub-cont{
-  -webkit-transform:translate3d(-640px, 0, 0);
-          transform:translate3d(-640px, 0, 0);
+  -webkit-transform:translate3d(-400px, 0, 0);
+          transform:translate3d(-400px, 0, 0);
 }
 
 .img{

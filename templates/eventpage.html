@@ -1,6 +1,100 @@
 {% extends 'base.html' %}
 
-{{{% block body %}
-<h1> Title: {{events.title}} </h1>
-<h1> Tags: {{events.tag}} </h1>
-{% endblock body %}}}
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css"/>
+
+{% block title %} Home {% endblock title %}
+
+{% block nav1link %}
+  #events
+{% endblock nav1link %}
+
+{% block nav1 %}
+  <img src="https://img.icons8.com/cute-clipart/38/000000/overtime.png"/> View Events
+{% endblock nav1 %}
+
+{% block nav2link %} 
+
+  {% if user.is_authenticated %}
+    
+  {% else %}
+    /signup
+  {% endif %}
+
+{% endblock nav2link %}
+
+{% block nav2 %} 
+
+  {% if user.is_authenticated %}
+    <img src="https://img.icons8.com/emoji/38/000000/waving-hand-emoji.png"/> Hello, {{user.first_name}}
+  {% else %}
+    <img src="https://img.icons8.com/emoji/38/000000/waving-hand-emoji.png"/> Login
+  {% endif %}
+
+{% endblock nav2 %}
+
+{% block nav3link %} 
+
+  {% if user.is_authenticated %}
+    /contact
+  {% else %}
+    /contact
+  {% endif %}
+
+{% endblock nav3link %}
+
+{% block nav3 %} 
+
+  {% if user.is_authenticated %}
+    <img src="https://img.icons8.com/cute-clipart/38/000000/form.png"/> Participate
+  {% else %}
+    <img src="https://img.icons8.com/cute-clipart/38/000000/form.png"/> Participate
+  {% endif %}
+
+{% endblock nav3 %}
+
+{% block nav4link %} 
+
+  {% if user.is_authenticated %}
+    /logout 
+  {% endif %}
+
+{% endblock nav4link %}
+
+{% block nav4 %} 
+
+  {% if user.is_authenticated %}
+    <img src="https://img.icons8.com/cute-clipart/38/000000/logout-rounded-left.png"/> LogOut
+  {% endif %}
+
+{% endblock nav4 %}
+
+{% block body %} 
+<div style = "background-color:lightblue;"
+>
+<div class = "container-fluid px-0">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1600x500/?{{events.title}},{{events.tag}}" class="d-block w-100" alt="...">
+    </div>
+</div>
+</div>
+<div>
+<div class="container mt-4 mb-4" style="background-color: beige;border-radius:64px;">
+<h1 class="text-center pt-3 pb-3"> {{events.title}}</h1>
+<div style="padding:20px;">
+<div style="overflow:hidden; position:relative;">
+<div id="location" style="float:left;padding-left:80px;">
+<h2> <img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/> Location </h2>
+<h4 style="text-align:justify;padding-top:20px;padding-bottom:20px;padding-left:40px;"> {{events.location}} </h4>
+</div>
+<div id="datetime" style="float:right;padding-right:80px;">
+<h2> <img src="https://img.icons8.com/nolan/64/time-card.png"/> Date and Time </h2>
+<h4 style="text-align:justify;padding-top:20px;padding-bottom:20px;padding-right:40px;">{{events.eventday}}, {{events.eventmonth}} {{events.eventdate}} {{events.eventyear}}</h4>
+</div>
+</div>
+<h2> <img src="https://img.icons8.com/cute-clipart/64/000000/about.png"/> About the event </h2>
+<h4 style="text-align:justify;padding-top:20px;padding-bottom:20px;"> {{events.desc}} </h4>
+</div>
+
+{% endblock body %}
