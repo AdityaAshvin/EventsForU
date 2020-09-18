@@ -74,7 +74,7 @@ def contact(request):
         if result['success']:
                 contact = Contact(name = name, email = email, phone = phone, desc = desc)
                 contact.save()
-                messages.success(request, 'Your response has been sent! You will soon be recieving an email containing all the details')
+                messages.success(request, 'Your response has been sent! You will soon be recieving an email containing all the details. If you cannot find the email in your inbox, check the bulk or the junk folders.')
                 event = EventPage.objects.get(id=desc)
                 context = {
                     "name": name,
