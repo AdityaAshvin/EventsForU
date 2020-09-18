@@ -85,7 +85,7 @@ def contact(request):
                     "organizer": event.organizer
                 }
                 message = render_to_string('email/registration_complete_email.html', context)
-                send_mail('Registration Completed | EventsForU',  strip_tags(message) , from_email, [email], fail_silently=False, html_message=message)
+                send_mail('Registration Completed | EventsForU',  strip_tags(message) , 'adityaashvin02@gmail.com', [email], fail_silently=False, html_message=message)
                 return redirect('home')
         else:
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')

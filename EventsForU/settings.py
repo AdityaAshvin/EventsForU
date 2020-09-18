@@ -154,10 +154,11 @@ SOCIAL_AUTH_GITHUB_SECRET = '1ef90bfe6d26c58f2620ddfab10aa19cae6b6a39'
 
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LeHq6kZAAAAADYjaLlN81u-DeQ7cP_zMMH9cC_3'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'adityaashvin02@gmail.com'
-EMAIL_HOST_PASSWORD = 'eventzforu20'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
 
 LOGIN_URL = 'login'
