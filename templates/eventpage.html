@@ -83,27 +83,27 @@
 <div class="container mt-4 mb-4" style="background-color: beige;border-radius:64px;">
 <h1 class="text-center pt-3 pb-3" style="font-family:roboto;font-weight:bold;color:darkblue;"> {{events.title}}</h1>
 <div style="padding:20px;">
-<div style="overflow:hidden; position:relative;">
-<div id="tags" style="float:left;padding-left:80px;">
-<u><h2 style="font-family:oswald; font-weight:bolder;color:darkblue;"> <img src="https://img.icons8.com/nolan/64/tags.png"/> Date and Time </h2></u>
-<h4 style="font-family:montserrat;text-align:justify;padding-top:20px;padding-bottom:20px;padding-left:40px;color:red;"> {{events.eventday}}, {{events.eventmonth}} {{events.eventdate}} {{events.eventyear}} </h4>
+<div class="row">
+    <div class="col-sm">
+      <u><h2 style="font-family:oswald; font-weight:bolder;color:darkblue;"> <img src="https://img.icons8.com/nolan/64/tags.png"/> Date and Time </h2></u>
+      <h4 style="font-family:montserrat;text-align:justify;color:red;"> {{events.eventday}}, {{events.eventmonth}} {{events.eventdate}} {{events.eventyear}} </h4>
+    </div>
+    <div class="col-sm">
+      <u><h2 style="font-family:oswald;padding-right:170px;color:darkblue;"> <img src="https://img.icons8.com/dusk/64/000000/date-to.png"/> Event Tag </h2></u>
+      <h4 style="font-family:montserrat;text-align:justify;color:red;"> {{events.tag}} </h4>
+    </div>
 </div>
-<div id="datetime" style="float:right;padding-right:80px;">
-<u><h2 style="font-family:oswald;padding-right:170px;color:darkblue;"> <img src="https://img.icons8.com/dusk/64/000000/date-to.png"/> Event Tag </h2></u>
-<h4 style="font-family:montserrat;text-align:justify;padding-top:20px;padding-bottom:20px;padding-left:60px;color:red;"> {{events.tag}} </h4>
+<div class="row pt-4">
+    <div class="col-sm">
+      <u><h2 style="font-family:oswald;"> <img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/> Location </h2></u>
+      <h4 style="font-family:montserrat;text-align:justify;color:red;"> {{events.location}} </h4>  
+    </div>
+    <div class="col-sm">
+      <u><h2 style="font-family:oswald;color:darkblue;"> <img src="https://img.icons8.com/nolan/64/time-card.png"/> Organizer </h2></u>
+      <h4 style="font-family:montserrat;text-align:justify;color:red;">{{events.organizer}}</h4>
+    </div>
 </div>
-</div>
-<div style="overflow:hidden; position:relative;">
-<div id="location" style="float:left;padding-left:80px;color:darkblue;width:50%">
-<u><h2 style="font-family:oswald;"> <img src="https://img.icons8.com/dusk/64/000000/worldwide-location.png"/> Location </h2></u>
-<h4 style="font-family:montserrat;text-align:justify;padding-top:20px;padding-bottom:20px;padding-left:40px;color:red;"> {{events.location}} </h4>
-</div>
-<div id="lastdate" style="float:left;padding-right:50px;width:50%">
-<u><h2 style="font-family:oswald;color:darkblue;"> <img src="https://img.icons8.com/nolan/64/time-card.png"/> Organizer </h2></u>
-<h4 style="font-family:montserrat;text-align:justify;padding-top:20px;padding-bottom:20px;padding-right:40px;color:red;">{{events.organizer}}</h4>
-</div>
-</div>
-<u><h2 style="font-family:oswald;color:darkblue;"> <img src="https://img.icons8.com/cute-clipart/64/000000/about.png"/> About the event </h2></u>
+<u><h2 class="pt-4" style="font-family:oswald;color:darkblue;"> <img src="https://img.icons8.com/cute-clipart/64/000000/about.png"/> About the event </h2></u>
 <h4 style="text-align:justify;padding-top:20px;padding-bottom:20px;font-family:pt seriff;color:red;"> {{events.desc}} </h4>
 <u><h2 class="text-center" style="font-family:oswald;padding-bottom:20px;color:darkblue;"> Unique id of the event </h2></u>
 <textarea id="copyContent" class="form-control" rows="1" style="background-color:black; color:white;width:340px;margin-left:auto;margin-right:auto;">{{events.id}}</textarea>  
